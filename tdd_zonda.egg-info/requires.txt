@@ -1,0 +1,10 @@
+
+[dev]
+ipdb
+ipython
+pytest
+pytest-cov
+
+[testing]
+pytest
+pytest-cov
