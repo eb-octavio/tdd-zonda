@@ -1,14 +1,34 @@
-from chess.board import Board
-from chess.board import Rook
+import pytest
+
+from chess.board import (
+    Board,
+    ImpossibleSettleException,
+    Rook,
+)
 
 
 class TestBoard:
 
-    def test_it_can_settle_a_rook(self):
+    class TestSettle:
 
-        board = Board()
-        rook = Rook()
+        def test_it_should_settle_the_rook_in_a_square(self):
 
-        board.settle(rook, x='a', y='1')
+            board = Board()
+            rook = Rook()
 
-        assert board.squares['a']['1'] == rook
+            board.settle(rook, x='a', y='1')
+
+            assert board.squares['a']['1'] == rook
+
+        def test_it_raise_an_exception_if_a_piece_already_settled(self):
+
+            board = Board()
+            board.squares = {
+                'a': {
+                    '1': Rook()
+                }
+            }
+
+            with pytest.raises(ImpossibleSettleException):
+
+                board.settle(Rook(), x='a', y='1')
