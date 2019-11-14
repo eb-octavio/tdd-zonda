@@ -1,9 +1,0 @@
-setup.py
-chess/__init__.py
-tdd_zonda.egg-info/PKG-INFO
-tdd_zonda.egg-info/SOURCES.txt
-tdd_zonda.egg-info/dependency_links.txt
-tdd_zonda.egg-info/requires.txt
-tdd_zonda.egg-info/top_level.txt
-tests/__init__.py
-tests/test_chess.py
