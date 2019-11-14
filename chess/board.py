@@ -5,6 +5,7 @@ class ImpossibleSettleException(Exception):
 class Board:
 
     def __init__(self):
+
         self.squares = {
             'a': {'1': {}},
         }
